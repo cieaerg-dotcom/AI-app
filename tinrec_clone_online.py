@@ -107,7 +107,7 @@ if uploaded_files:
                     
                     while g_file.state.name == "PROCESSING":
                         time.sleep(2)
-                        g_file = genai.get_file(g_file.name)
+                        g_file = genai.upload_file(path=temp_name, mime_type=uploaded_file.type)
                     
                     # C. 初始化模型
                     model = genai.GenerativeModel(
