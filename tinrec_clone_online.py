@@ -61,6 +61,14 @@ with st.sidebar:
     )
     use_thinking = st.checkbox("啟用思考模式")
 
+# 檢查金鑰是否存在
+if not api_key:
+    st.warning("請輸入金鑰以啟用 AI 功能")
+    st.stop()
+
+# 若已輸入金鑰，則進行設定
+genai.configure(api_key=api_key)
+
     context_input = st.text_area(
         "專業背景描述 (重要)",
         placeholder="               ",
