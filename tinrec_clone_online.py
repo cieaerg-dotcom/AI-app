@@ -20,12 +20,14 @@ with st.sidebar:
     st.link_button("🔑 取得 Google API 金鑰", "https://aistudio.google.com/app/apikey")
     
     # 模型設定
-    model_choice = st.selectbox(
+        model_choice = st.selectbox(
         "選擇模型 (Gemini 3 系列)",
         [
+            "gemini-2.5-flash",
+            "gemini-2.5-flash-lite",
+            "gemini-2.5-flash",
             "gemini-3-flash-preview",
-            "gemini-3-pro-preview",
-            "gemini-3.1-pro-preview",
+            "gemini-3.1-flash-lite-preview",
         ]
     )
     use_thinking = st.checkbox("啟用思考模式")
