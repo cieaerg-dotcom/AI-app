@@ -41,8 +41,10 @@ with st.sidebar:
         "選擇模型",
         [
             "gemini-2.5-flash",
+            "gemini-2.5-pro",
             "gemini-2.5-flash-lite",
             "gemini-3-flash-preview",
+            "gemini-3.1-pro-preview",
             "gemini-3.1-flash-lite-preview",
         ]
     )
@@ -148,7 +150,7 @@ if uploaded_files:
                 2.專有名詞優先：對技術名詞、公司產品名、專案代號保持高度敏感。若語音模糊，請根據背景「{context_input}」修正所有專有名詞。
                 3.辨識不同的說話人（標註為 說話人 A, B...）。
                 4.每段話前加上 [mm:ss] 時間戳。
-                5.【精準去重】：移除段落接縫處重複的語句，整合成流暢的全文。
+                5.【精準去重】：移除段落接縫處重複的語句，整合成流暢的全文並調整成適合閱讀的段落。
                 6.【結構化摘要】：提供 300 字摘要與 5 個行動重點。
                 7.【全文輸出】：輸出校正後的完整逐字稿。
                 
