@@ -51,7 +51,7 @@ with st.sidebar:
                     
             # 💡 根據最新文件，加入動態思考層級的設定
             gen_config = {}
-                    
+
             # 如果你在側邊欄勾選了「啟用思考模式」，且模型名稱包含 pro 或 3 系列
             if use_thinking:
                 gen_config["thinking_config"] = {
