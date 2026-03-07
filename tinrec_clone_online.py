@@ -11,7 +11,7 @@ ERROR_MESSAGES = {
     "403": "🚫 鑰匙失效：您的 API 金鑰無權限使用此模型，請檢查 Google AI Studio 設定。",
     "500": "🤒 伺服器感冒了：Google 那端暫時出了點問題，請稍後再試。",
     "quota": "📈 額度用完囉：今天的免費次數已達上限，明天請早，或換一個模型試試！",
-    "499": "⚡ 連線逾時：音檔處理時間過長，已自動切換為分段模式處理。"
+    "499": "⚡ 連線逾時：音檔處理時間過長，請改成切八段模式處理。"
 }
 
 # --- 2. 頁面設定 ---
@@ -52,13 +52,13 @@ with st.sidebar:
 
     context_input = st.text_area(
         "專業背景描述 (重要)",
-        placeholder="請輸入音檔背景資訊...",
+        placeholder="盡可能描述音檔背景、專業範圍...",
         help="提供背景能大幅提升專有名詞辨識率"
     )
 
 # --- 5. 主頁面邏輯 ---
 st.title("🎙️ 我的專屬 AI 錄音轉寫工具 (長音檔優化版)")
-st.write("針對長音檔自動執行「上傳、轉錄、去重、總結」流水線。")
+st.write("針對分段音檔自動執行「上傳、轉錄、每段逐字稿（逐字稿請自行複製貼上）、總結」流水線。")
 
 if not api_key:
     st.warning("👈 請在側邊欄輸入 API 金鑰以啟用功能。")
@@ -168,7 +168,7 @@ if uploaded_files:
                 
                 final_response = model.generate_content(final_prompt)
                 
-                st.subheader("📝 最終整合報告")
+                st.subheader("📝 最終整合報告（下載報告前請確認分段逐字稿已經複製貼上，下載後記錄將清空）")
                 st.markdown(final_response.text)
                 status.update(label="✅ 全文處理完成！", state="complete")
 
