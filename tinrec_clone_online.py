@@ -61,7 +61,7 @@ with st.sidebar:
         }
                     
     # 執行生成
-    response = model.generate_content(
+        response = model.generate_content(
         [chunk_prompt, audio_file],
         generation_config=gen_config,
         request_options={"timeout": 600}
